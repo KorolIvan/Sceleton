@@ -4,7 +4,7 @@ import Tests.BasicTest;
 import org.junit.Test;
 
 /**
- * Created by Иван on 17.12.2016.
+ * Created by Ivan on 17.12.2016.
  */
 
 //создаем клас для теста главной слтраници и наследуем

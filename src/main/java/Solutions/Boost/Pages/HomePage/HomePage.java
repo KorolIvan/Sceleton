@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 /**
- * Created by Иван on 17.12.2016.
+ * Created by Ivan on 17.12.2016.
  */
 //клас для проверки запуска страници
 public class HomePage extends MainPage{

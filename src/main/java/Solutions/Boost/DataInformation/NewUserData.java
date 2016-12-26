@@ -1,7 +1,7 @@
 package Solutions.Boost.DataInformation;
 
 /**
- * Created by Иван on 18.12.2016.
+ * Created by Ivan on 18.12.2016.
  */
 public class NewUserData {
     public String email;
