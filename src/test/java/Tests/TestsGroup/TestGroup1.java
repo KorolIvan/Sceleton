@@ -11,6 +11,7 @@ import static org.openqa.selenium.server.SpecialCommand.open;
 /**
  * Created by Ivan on 19.12.2016.
  */
+//этот тест будет тестировать сраницу логина
 public class TestGroup1 extends BasicTest{
 
     @Test
@@ -18,6 +19,7 @@ public class TestGroup1 extends BasicTest{
         try {
             this.homePage.loadPage();
             this.signUpNewUser.fillEmailField(newUserData);
+            this.singIn.fillUserFields(userData);
         }catch (NullPointerException e){
             e.printStackTrace();
         }

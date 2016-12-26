@@ -2,8 +2,10 @@ package Tests;
 
 import Solutions.Boost.DataInformation.ConfigurationProperties;
 import Solutions.Boost.DataInformation.NewUserData;
+import Solutions.Boost.DataInformation.UserData;
 import Solutions.Boost.Pages.HomePage.HomePage;
 import Solutions.Boost.Pages.SignUpNewUser.SignUpNewUser;
+import Solutions.Boost.Pages.SingInPage.SingIn;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -18,6 +20,7 @@ public class BasicTest{
     //здесь создаються все переменные класов которые потом будут использоваться в тестах
     protected HomePage homePage;
     protected SignUpNewUser signUpNewUser;
+    protected SingIn singIn;
 
     //создаем нового юзера и по требованию конструктора
     // вписываем все стринги которые необходимы
@@ -29,6 +32,11 @@ public class BasicTest{
                     ConfigurationProperties.getProperties("newUser.lastName(valid)")
                     );
 
+    protected UserData userData = new UserData(
+                    ConfigurationProperties.getProperties("user.email(valid)"),
+                    ConfigurationProperties.getProperties("user.password(valid)")
+                    );
+
     protected ThreadLocal<WebDriver> threadLocal;
     //начало теста где будут инициалезированы все объекты и выделена для них память
     @Before
@@ -37,6 +45,7 @@ public class BasicTest{
         threadLocal.set(new FirefoxDriver());//принимает в сетя драйвер ФФ для работы
         homePage = new HomePage(getWebDriver());
         signUpNewUser = new SignUpNewUser(getWebDriver());
+        singIn = new SingIn(getWebDriver());
 
     }
     //конец теста
