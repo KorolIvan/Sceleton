@@ -8,7 +8,7 @@ import java.util.Properties;
  * Created by Ivan on 16.12.2016.
  */
 
-/* этот клас с методом вытягивают информацию с файла конфигуратионм в папен ресоурс*/
+/* this class will be take date from resource */
 public class ConfigurationProperties {
     private static Properties PROPERTIES;
     private static String key;
