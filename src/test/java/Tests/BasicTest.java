@@ -9,7 +9,11 @@ import Solutions.Boost.Pages.SingInPage.SingIn;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+
+import java.io.File;
 
 /**
  * Created by Ivan on 16.12.2016.
@@ -36,13 +40,16 @@ public class BasicTest{
                     ConfigurationProperties.getProperties("user.email(valid)"),
                     ConfigurationProperties.getProperties("user.password(valid)")
                     );
+    File pathBinary = new File("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+    FirefoxBinary firefoxBinary = new FirefoxBinary(pathBinary);
+    FirefoxProfile firefoxProfile = new FirefoxProfile();
 
     protected ThreadLocal<WebDriver> threadLocal;
     //начало теста где будут инициалезированы все объекты и выделена для них память
     @Before
     public void setUp(){
         threadLocal = new ThreadLocal<WebDriver>();
-        threadLocal.set(new FirefoxDriver());//принимает в сетя драйвер ФФ для работы
+        threadLocal.set(new FirefoxDriver(firefoxBinary, firefoxProfile));//принимает в сетя драйвер ФФ для работы
         homePage = new HomePage(getWebDriver());
         signUpNewUser = new SignUpNewUser(getWebDriver());
         singIn = new SingIn(getWebDriver());
