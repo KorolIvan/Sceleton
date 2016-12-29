@@ -40,8 +40,8 @@ public class BasicTest{
                     ConfigurationProperties.getProperties("user.email(valid)"),
                     ConfigurationProperties.getProperties("user.password(valid)")
                     );
-    //File pathBinary = new File("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
-    File pathBinary = new File("/opt/firefox46/firefox");
+    File pathBinary = new File("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+    //File pathBinary = new File("/opt/firefox46/firefox");
     FirefoxBinary firefoxBinary = new FirefoxBinary(pathBinary);
     FirefoxProfile firefoxProfile = new FirefoxProfile();
 
