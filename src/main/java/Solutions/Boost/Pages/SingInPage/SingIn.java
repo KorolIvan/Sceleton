@@ -9,21 +9,21 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 /**
- * Created by Ivan on 26.12.2016.
+ * @author Ivan on 26.12.2016.
  */
 public class SingIn extends MainPage {
 
     @FindBy(css = ".login")
-    WebElement logInButton;
+    private WebElement logInButton;
 
     @FindBy(css = "#email")
-    WebElement emailField;
+    private WebElement emailField;
 
     @FindBy(css = "#passwd")
-    WebElement passwordField;
+    private WebElement passwordField;
 
     @FindBy(css = "#SubmitLogin")
-    WebElement submitBut;
+    private WebElement submitBut;
 
     public SingIn(WebDriver driver){
         super(driver);

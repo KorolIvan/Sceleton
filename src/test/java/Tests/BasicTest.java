@@ -16,7 +16,7 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import java.io.File;
 
 /**
- * Created by Ivan on 16.12.2016.
+ * @author Ivan on 16.12.2016.
  */
 
 //создаются объекты всех созданых класов для проверки
@@ -40,16 +40,16 @@ public class BasicTest{
                     ConfigurationProperties.getProperties("user.email(valid)"),
                     ConfigurationProperties.getProperties("user.password(valid)")
                     );
-    File pathBinary = new File("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
-    //File pathBinary = new File("/opt/firefox46/firefox");
-    FirefoxBinary firefoxBinary = new FirefoxBinary(pathBinary);
-    FirefoxProfile firefoxProfile = new FirefoxProfile();
+    //File pathBinary = new File("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+    private File pathBinary = new File("/opt/firefox46/firefox");
+    private FirefoxBinary firefoxBinary = new FirefoxBinary(pathBinary);
+    private FirefoxProfile firefoxProfile = new FirefoxProfile();
 
-    protected ThreadLocal<WebDriver> threadLocal;
+    private ThreadLocal<WebDriver> threadLocal;
     //начало теста где будут инициалезированы все объекты и выделена для них память
     @Before
     public void setUp(){
-        threadLocal = new ThreadLocal<WebDriver>();
+        threadLocal = new ThreadLocal<>();
         threadLocal.set(new FirefoxDriver(firefoxBinary, firefoxProfile));//принимает в сетя драйвер ФФ для работы
         homePage = new HomePage(getWebDriver());
         signUpNewUser = new SignUpNewUser(getWebDriver());
@@ -66,7 +66,7 @@ public class BasicTest{
         }
     }
     //вносим вэб драйвер в переменую триэд локал для дальнейшего использования
-    protected WebDriver getWebDriver(){
+    private WebDriver getWebDriver(){
         return threadLocal.get();
     }
 }

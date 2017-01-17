@@ -1,7 +1,7 @@
 package Solutions.Boost.DataInformation;
 
 /**
- * Created by Ivan on 16.12.2016.
+ * @author Ivan on 16.12.2016.
  */
 
 

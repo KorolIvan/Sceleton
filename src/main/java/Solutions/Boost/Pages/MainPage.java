@@ -11,11 +11,11 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Created by Ivan on 16.12.2016.
+ * @author Ivan on 16.12.2016.
  */
 // создаются методы при вызове которых булут исполняться какие то действия
 public abstract class MainPage {
-    public WebDriver driver;
+    protected WebDriver driver;
     private WebDriverWait wait;
 
 
@@ -32,14 +32,14 @@ public abstract class MainPage {
     public abstract void open();
 
     //введение данных по вэб элементу и данных с конфигурации
-    public void type(WebElement element, String txt){
+    protected void type(WebElement element, String txt){
         element.clear();
         element.sendKeys(txt);
     }
 
     //метод который снимает скриншоты и мохроняет в папке при этом имя оприделяется
     // при вызове этого метода
-    public final void takeScreenShot (String fileName){
+    protected final void takeScreenShot(String fileName){
 
         File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         try {
@@ -50,8 +50,11 @@ public abstract class MainPage {
         }
 
     }
+
+
+
     //метод который вызывает слип
-    public void sleepSecond(int second){
+    protected void sleepSecond(int second){
         try {
             Thread.sleep(second * 1000);
         } catch (InterruptedException e) {
