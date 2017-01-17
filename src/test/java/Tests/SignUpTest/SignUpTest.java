@@ -4,7 +4,7 @@ import Tests.BasicTest;
 import org.junit.Test;
 
 /**
- * Created by Ivan on 18.12.2016.
+ * @author Ivan on 18.12.2016.
  */
 public class SignUpTest extends BasicTest {
     @Test
